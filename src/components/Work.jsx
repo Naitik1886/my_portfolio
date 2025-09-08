@@ -1,4 +1,10 @@
-export default function Work({ name = "guest", src = "/vite.svg" , desc = "something" , url = "/" , mob = "/vite.svg" }) {
+export default function Work({
+  name = "guest",
+  src = "/vite.svg",
+  desc = "something",
+  url = "/",
+  mob = "/vite.svg",
+}) {
   return (
     <div className="flex flex-col items-center  justify-center sm:mt-15 md:mt-20 md:mb-15">
       <div
@@ -14,7 +20,8 @@ export default function Work({ name = "guest", src = "/vite.svg" , desc = "somet
         {name}
       </div>
       <div className="vide-container hidden sm:flex  sm:w-100 sm:h-120 text-center justify-evenly items-center md:w-128 md:h-120  lg:w-160 lg:h-120   xl:w-240 xl:h-120 ">
-        <video 
+        <video
+          preload="metadata"
           className="sm:w-72  sm:h-60 md:w-80 md:h-60 lg:w-96 lg:h-72 xl:w-xl xl:h-96"
           autoPlay
           muted
@@ -25,7 +32,7 @@ export default function Work({ name = "guest", src = "/vite.svg" , desc = "somet
         </video>
 
         <span className="text-xl ">
-         {desc}
+          {desc}
           <br />
           <a
             style={{
@@ -43,12 +50,19 @@ export default function Work({ name = "guest", src = "/vite.svg" , desc = "somet
           </a>
         </span>
       </div>
-      <div  className="w-60 h-180 mt-5 text-center items-center sm:hidden">
-        <video className="w-60  h-100 mb-9" autoPlay muted loop playsInline>
+      <div className="w-60 h-180 mt-5 text-center items-center sm:hidden">
+        <video
+          preload="metadata"
+          className="w-60  h-100 mb-9"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
           <source src={mob} type="video/mp4" />
         </video>
         <span className="text-md  ">
-         {desc}
+          {desc}
           <br />
           <a
             style={{
